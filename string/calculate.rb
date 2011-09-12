@@ -6,8 +6,5 @@ class String
     end
     to_f # No calculation needed
   end
-  
-  def calc
-    calculate
-  end
+  alias calc calculate
 end
