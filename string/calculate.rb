@@ -12,4 +12,8 @@ class String
       to_f  # No calculation needed
     end
   end
+  
+  def calc
+    calculate
+  end
 end

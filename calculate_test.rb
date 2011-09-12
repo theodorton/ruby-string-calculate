@@ -51,6 +51,13 @@ class CalculateTest < Test::Unit::TestCase
   def test_zero_devision
     assert_equal "5 / 0".calculate, INFINITY
   end
+  
+  def test_short_version
+    assert_equal "1+5".calc, "1+5".calculate
+    assert_equal "6-1".calc, "6-1".calculate
+    assert_equal "6*2".calc, "6*2".calculate
+    assert_equal "16*12/6+67-12+20/5".calc, "16*12/6+67-12+20/5".calculate
+  end
 end
 
 
