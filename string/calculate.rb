@@ -9,7 +9,7 @@ class String
     elsif (factors = split('*')).size > 1
       factors.map(&:calculate).inject(:*)  # Multiplication
     else
-      to_i  # No calculation needed
+      to_f  # No calculation needed
     end
   end
 end
