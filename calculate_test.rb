@@ -2,6 +2,8 @@ require 'test/unit'
 require_relative 'string/calculate'
 
 class CalculateTest < Test::Unit::TestCase
+  INFINITY = 1.0/0
+  
   def test_addition
     assert_equal "1+5".calculate, 6
   end
@@ -44,6 +46,10 @@ class CalculateTest < Test::Unit::TestCase
   
   def test_floats_division
     assert_equal "5.5 / 11".calculate, 0.5
+  end
+  
+  def test_zero_devision
+    assert_equal "5 / 0".calculate, INFINITY
   end
 end
 
