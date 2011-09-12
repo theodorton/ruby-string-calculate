@@ -3,7 +3,7 @@ class String
     if (factors = self.split('+')).size > 1
       factors.map(&:calculate).inject(:+)  # Addition
     elsif (factors = split('-')).size > 1
-      factors.map(&:calculate).inject(:-)  # Substraction
+      factors.map(&:calculate).inject(:-)  # Subtraction
     elsif (factors = split('/')).size > 1
       factors.map(&:calculate).inject(:/)  # Division
     elsif (factors = split('*')).size > 1

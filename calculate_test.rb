@@ -8,7 +8,7 @@ class CalculateTest < Test::Unit::TestCase
     assert_equal "1+5".calculate, 6
   end
   
-  def test_substraction
+  def test_subtraction
     assert_equal "6-1".calculate, 5
   end
   
