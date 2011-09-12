@@ -1,21 +1,15 @@
 class String
   def calculate
-    factors = Hash.new
-    if (factors[:add] = self.split('+')).size > 1
-      # Addition
-      factors[:add].map(&:calculate).inject(:+)
-    elsif (factors[:sub] = split('-')).size > 1
-      # Substraction
-      factors[:sub].map(&:calculate).inject(:-)
-    elsif (factors[:div] = split('/')).size > 1
-      # Division
-      factors[:div].map(&:calculate).inject(:/)
-    elsif (factors[:mul] = split('*')).size > 1
-      # Multiplication
-      factors[:mul].map(&:calculate).inject(:*)
+    if (factors = self.split('+')).size > 1
+      factors.map(&:calculate).inject(:+)  # Addition
+    elsif (factors = split('-')).size > 1
+      factors.map(&:calculate).inject(:-)  # Substraction
+    elsif (factors = split('/')).size > 1
+      factors.map(&:calculate).inject(:/)  # Division
+    elsif (factors = split('*')).size > 1
+      factors.map(&:calculate).inject(:*)  # Multiplication
     else
-      # No calculation needed
-      to_i
+      to_i  # No calculation needed
     end
   end
 end
