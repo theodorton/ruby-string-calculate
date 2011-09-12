@@ -1,16 +1,10 @@
 class String
   def calculate
-    if (factors = self.split('+')).size > 1
-      factors.map(&:calculate).inject(:+)  # Addition
-    elsif (factors = split('-')).size > 1
-      factors.map(&:calculate).inject(:-)  # Subtraction
-    elsif (factors = split('/')).size > 1
-      factors.map(&:calculate).inject(:/)  # Division
-    elsif (factors = split('*')).size > 1
-      factors.map(&:calculate).inject(:*)  # Multiplication
-    else
-      to_f  # No calculation needed
+    [:+, :-, :/, :*].each do |op|
+      factors = self.split(op.to_s)
+      return factors.map(&:calculate).inject(op) if factors.size > 1
     end
+    to_f # No calculation needed
   end
   
   def calc
