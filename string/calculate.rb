@@ -1,6 +1,6 @@
 class String
   def calculate
-    [:+, :-, :/, :*].each do |op|
+    [:+, :-, :*, :/].each do |op|
       factors = self.split(op.to_s)
       return factors.map(&:calculate).inject(op) if factors.size > 1
     end

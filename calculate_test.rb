@@ -43,6 +43,10 @@ class CalculateTest < Test::Unit::TestCase
     assert_equal "6*2".calc,                "6*2".calculate
     assert_equal "16*12/6+67-12+20/5".calc, "16*12/6+67-12+20/5".calculate
   end
+  
+  def test_problem_with_order
+    assert_equal "10/1*2".calc, 20
+  end
 end
 
 
